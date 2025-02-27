@@ -29,8 +29,8 @@ class opts(object):
 
 
     # model
-    self.parser.add_argument('--ckpt_dir', type=str, default='/home/yyk/lego/related_work/llama/llama-2-13b', help='load pretrained-llama model')
-    # self.parser.add_argument('--model_params_path', type=str, default='/home/yyk/lego/related_work/llama/llama-2-13b', help='model params path')
+    self.parser.add_argument('--ckpt_dir', type=str, default='lego/related_work/llama/llama-2-13b', help='load pretrained-llama model')
+    # self.parser.add_argument('--model_params_path', type=str, default='lego/related_work/llama/llama-2-13b', help='model params path')
     self.parser.add_argument('--max_seq_len', type=int, default=512, help='max whole length for llama transformer')
     self.parser.add_argument('--max_gen_len', type=int, default=2047, help='max gen length for llama transformer')
     self.parser.add_argument('--temperature', type=float, default=0.6, help='Temperature value for controlling randomness in sampling')
@@ -44,7 +44,7 @@ class opts(object):
     self.parser.add_argument('--add_cross', type=int, default=4, help='frequce to add cross')
     self.parser.add_argument('--c_n_heads', type=int, default=32, help='n_heads for image cross atten')
     self.parser.add_argument('--text_dim', type=int, default=128, help='the dim of input_image for the image_cross_attention')
-    # self.parser.add_argument('--image_model_dir', type=str, default='/home/yyk/lego/src/model/dinov2', help='load pretrained-dinov2 model')
+    # self.parser.add_argument('--image_model_dir', type=str, default='lego/src/model/dinov2', help='load pretrained-dinov2 model')
     self.parser.add_argument('--text_model_size', type=str, default='dinov2_vits14', help='dinov2 size')
 
 
@@ -62,7 +62,7 @@ class opts(object):
 
     self.parser.add_argument('--mix_train', action='store_true', help='use mix train or not')
     self.parser.add_argument('--max_mix', type=float, default=0.5, help='the max ratio for mix_train')
-    # self.parser.add_argument('--pretrain_model_path', type=str, default='/NASdata/yyk/logs_2024-03-21-19-17/val', help='load pretrained-bricks model')
+    # self.parser.add_argument('--pretrain_model_path', type=str, default='val', help='load pretrained-bricks model')
     
     # loss
     self.parser.add_argument('--niu', type=float, default=0.1, help='weight for brick loss')
@@ -106,7 +106,7 @@ class opts(object):
     
 
     # baseline new
-    self.parser.add_argument('--baseline_model', type=str, default='/NASdata/yyk/06-05-2024--12-12-47/epoch_0130.h5', help='load retrained-baseline model')
+    self.parser.add_argument('--baseline_model', type=str, default='epoch_0130.h5', help='load retrained-baseline model')
     self.parser.add_argument('--baseline', action='store_true', help='caculate baseline acc')
     self.parser.add_argument('--baseline_render', action='store_true', help='render baseline ldrs')
 

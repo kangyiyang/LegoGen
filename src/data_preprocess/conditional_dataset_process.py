@@ -111,8 +111,6 @@ class conditional_dataset():
                         render_image=self.render.visualize_model(model,save_image_file)
                     except:
                         print(f'render defeat:{model_path}')
-                        # TODO
-                        # 150-170\690-700\990-1000\1200-1300大约有超出face数量的
 
 
 

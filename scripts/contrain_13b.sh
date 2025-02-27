@@ -1,10 +1,10 @@
 cd ..
 
 OMP_NUM_THREADS=1 \
-CUDA_VISIBLE_DEVICES=4,5 /home/yyk/miniconda3/envs/lego/bin/torchrun --nproc_per_node 2 --master_port=25633 main.py \
-    --conditional_dataset_root '/home/yyk/lego/dataset/conditional_generation dataset' \
-    --ckpt_dir '/NASdata/yyk/logs_2024-03-24-13-38/val' \
-    --image_model_dir '/home/yyk/lego/src/model/dinov2' \
+torchrun --nproc_per_node 2 --master_port=25633 main.py \
+    --conditional_dataset_root 'dataset/conditional_generation dataset' \
+    --ckpt_dir 'val' \
+    --image_model_dir 'src/model/dinov2' \
     --image_model_size 'dinov2_vits14' \
     --rank 4 \
     --c_n_heads 40 \

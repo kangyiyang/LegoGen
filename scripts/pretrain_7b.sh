@@ -1,9 +1,9 @@
 cd ..
 
 OMP_NUM_THREADS=1 \
-CUDA_VISIBLE_DEVICES=3 /home/yyk/miniconda3/envs/lego/bin/torchrun --nproc_per_node 1 --master_port=25641 main.py \
+torchrun --nproc_per_node 1 --master_port=25641 main.py \
     --max_seq_len 512 \
-    --ckpt_dir '/NASdata/yyk/llama_model/llama-2-13b' \
+    --ckpt_dir 'llama_model/llama-2-7b' \
     --lr 1e-5 \
     --niu 1 \
     --lamda 0.1 \

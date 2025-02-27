@@ -18,15 +18,6 @@ from clip.model import CLIP
 from clip import clip
 
 
-# TODO
-'''
-1.lora采用linear方式，好像还是没办法改为nn.Parameter
-2.lora现在的编写方式引入了推理延迟，可以通过将参数直接相加的方式去除推理损失
-3.lora的初始化是否合适，可以换换试试
-4.image_cross_atten没有对xq，xk添加旋转编码，或许后续可以尝试加上
-5.modelargs里添加的那些新的参数也可以添加到json文件里，这个就需要和logger联合重写json的加载和保存了
-
-'''
 
 @dataclass
 class ModelArgs:

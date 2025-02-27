@@ -28,8 +28,8 @@ class opts(object):
 
 
     # model
-    self.parser.add_argument('--ckpt_dir', type=str, default='/home/yyk/lego/related_work/llama/llama-2-13b', help='load pretrained-llama model')
-    # self.parser.add_argument('--model_params_path', type=str, default='/home/yyk/lego/related_work/llama/llama-2-13b', help='model params path')
+    self.parser.add_argument('--ckpt_dir', type=str, default='related_work/llama/llama-2-13b', help='load pretrained-llama model')
+    # self.parser.add_argument('--model_params_path', type=str, default='related_work/llama/llama-2-13b', help='model params path')
     self.parser.add_argument('--max_seq_len', type=int, default=512, help='max whole length for llama transformer')
     self.parser.add_argument('--max_gen_len', type=int, default=2047, help='max gen length for llama transformer')
     self.parser.add_argument('--temperature', type=float, default=0.6, help='Temperature value for controlling randomness in sampling')
@@ -43,7 +43,7 @@ class opts(object):
     self.parser.add_argument('--add_cross', type=int, default=4, help='frequce to add cross')
     self.parser.add_argument('--c_n_heads', type=int, default=32, help='n_heads for image cross atten')
     self.parser.add_argument('--image_dim', type=int, default=128, help='the dim of input_image for the image_cross_attention')
-    self.parser.add_argument('--image_model_dir', type=str, default='/home/yyk/lego/src/model/dinov2', help='load pretrained-dinov2 model')
+    self.parser.add_argument('--image_model_dir', type=str, default='src/model/dinov2', help='load pretrained-dinov2 model')
     self.parser.add_argument('--image_model_size', type=str, default='dinov2_vits14', help='dinov2 size')
 
 
@@ -54,14 +54,14 @@ class opts(object):
     self.parser.add_argument('--save_freq', type=int, default=100, help='freq for save checkpoint')
     self.parser.add_argument('--val_freq', type=int, default=5, help='freq for val')
     self.parser.add_argument('--save_by_iter', action='store_true', help='use iters to name checkpoint')
-    self.parser.add_argument('--save_model_dir', type=str, default='/NASdata/yyk',help='the dir to save model')
+    self.parser.add_argument('--save_model_dir', type=str, default='',help='the dir to save model')
     self.parser.add_argument('--val_ratio', type=float, default=0.1)
     self.parser.add_argument('--accuracy', action='store_true', help='assessment criteria')
     self.parser.add_argument('--max_norm', type=float, default=1)
 
     self.parser.add_argument('--mix_train', action='store_true', help='use mix train or not')
     self.parser.add_argument('--max_mix', type=float, default=0.5, help='the max ratio for mix_train')
-    # self.parser.add_argument('--pretrain_model_path', type=str, default='/NASdata/yyk/logs_2024-03-21-19-17/val', help='load pretrained-bricks model')
+    # self.parser.add_argument('--pretrain_model_path', type=str, default='val', help='load pretrained-bricks model')
     
     # loss
     self.parser.add_argument('--niu', type=float, default=0.1, help='weight for brick loss')

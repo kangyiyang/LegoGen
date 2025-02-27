@@ -132,7 +132,7 @@ def baseline_render(opt):
 def best_baseline(opt):
     import pickle
 
-    pickle_file = '/NASdata/yyk/lego-DGMG/15-05-2024--13-37-16/results.h5'
+    pickle_file = 'results.h5'
     with open(pickle_file, 'rb') as f:
         dataset_with_filenames = pickle.load(f)
 

@@ -23,18 +23,6 @@ from typing import List
 # from dinov2.models.vision_transformer import DinoVisionTransformer
 
 
-# TODO
-'''
-1.lora采用linear方式，好像还是没办法改为nn.Parameter
-2.lora现在的编写方式引入了推理延迟，可以通过将参数直接相加的方式去除推理损失
-3.lora的初始化是否合适，可以换换试试
-4.image_cross_atten没有对xq，xk添加旋转编码，或许后续可以尝试加上
-5.modelargs里添加的那些新的参数也可以添加到json文件里，这个就需要和logger联合重写json的加载和保存了
-
-1.将lora B初始化为0使得梯度反传到A都为0，暂时使用默认初始化
-2.再有最重要的image cross atten使得只有高层有梯度，出现了梯度现象现象
-'''
-
 @dataclass
 class ModelArgs:
     dim: int = 4096

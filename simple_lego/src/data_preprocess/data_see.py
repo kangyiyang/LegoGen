@@ -55,7 +55,7 @@ def plot_histogram(data_distribution):
 
     # 显示图形
     plt.tight_layout()  # 自动调整子图参数，使之填充整个图像区域
-    plt.savefig('/home/yyk/simple_lego/dataset/brick_static/test.png')
+    plt.savefig('simple_lego/dataset/brick_static/test.png')
 
 
 models_path=os.path.join(working_path,'dataset/preprocessed_dataset')

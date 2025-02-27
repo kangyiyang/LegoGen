@@ -13,12 +13,6 @@ sys.path.append(f'{working_path}/src')
 
 from utils.utils import get_paths, if_exists
 
-"""
-注意由于删除后砖块的路径没有改变，因此这个文件只能执行一次，否则结果不正确
-如果要重新运行，保证new_bricks,original_bricks都是没删除前的结果，这需要直接unzip new_bricks.zip/original_bricks.zip
-而export_obj.zip需要在export_obj文件夹下解压
-或者删除new和original bricks，然后重新运行pretrain_dataset_preprocess.py
-"""
 
 model_paths=get_paths(Model_analysis.preprocessed_models_path)
 new_bricks = os.listdir(Model_analysis.new_bricks_path)
@@ -26,9 +20,9 @@ original_bricks = os.listdir(Model_analysis.original_bricks_path)
 bricks=new_bricks+original_bricks
 bricks_obj=[brick.split('/')[-1][:-3]+'obj' for brick in bricks]
 
-brick_meshs_path1 = glob.glob('/home/yyk/lego/dataset/bricks/complete_bricks_obj/meshes/*.obj')
+brick_meshs_path1 = glob.glob('dataset/bricks/complete_bricks_obj/meshes/*.obj')
 brick_meshs1=[mesh.split('/')[-1] for mesh in brick_meshs_path1]
-brick_meshs_path2 = glob.glob('/home/yyk/lego/dataset/bricks/export_obj/*.obj')
+brick_meshs_path2 = glob.glob('dataset/bricks/export_obj/*.obj')
 brick_meshs2=[mesh.split('/')[-1] for mesh in brick_meshs_path2]
 brick_meshs=brick_meshs1+brick_meshs2
 
@@ -64,7 +58,7 @@ print(f'new bricks now is {len(new_bricks)}')
 
 # preprocessed models brick delete
 preprocessed_models=os.listdir(Model_analysis.preprocessed_models_path)
-processed_models_path='/home/yyk/lego/dataset/pretrain_bricks dataset/processed_models'
+processed_models_path='dataset/pretrain_bricks dataset/processed_models'
 
 for model in preprocessed_models:
     processed_model=[]
@@ -85,15 +79,15 @@ for model in preprocessed_models:
 
 #-----------------------------------------------------------------------
 # objs合并
-brick_objs_path='/home/yyk/lego/dataset/bricks/brick_objs'
+brick_objs_path='dataset/bricks/brick_objs'
 if_exists(brick_objs_path)
 
 
 for mesh in list(brick_meshs_set):
     if mesh in brick_meshs2:
-        shutil.copy2(f'/home/yyk/lego/dataset/bricks/export_obj/{mesh}', os.path.join(brick_objs_path,mesh))
+        shutil.copy2(f'dataset/bricks/export_obj/{mesh}', os.path.join(brick_objs_path,mesh))
     elif mesh in brick_meshs1:
-        shutil.copy2(f'/home/yyk/lego/dataset/bricks/complete_bricks_obj/meshes/{mesh}', os.path.join(brick_objs_path,mesh))
+        shutil.copy2(f'dataset/bricks/complete_bricks_obj/meshes/{mesh}', os.path.join(brick_objs_path,mesh))
     else:
         print(f'error:unknown obj {mesh}')
 

@@ -3,10 +3,7 @@ import os
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 
-"""
-由于lego omr网站更改，代码需要更新以下载omr数据集
-# TODO
-"""
+
 
 def if_exists(path):
     if not os.path.exists(path):
@@ -72,7 +69,7 @@ def get_urls(urls_files):
 
 
 
-path=r'D:\Research\Lego Generation\Work\Lego Dataset\omr'
+path=r'Lego Dataset\omr'
 urls_path=os.path.join(path,'urls')
 models_path=os.path.join(path,'models')
 if_exists(path)

@@ -139,9 +139,9 @@ original_bricks = os.listdir(Model_analysis.original_bricks_path)
 bricks=new_bricks+original_bricks
 bricks_obj=[brick.split('/')[-1][:-3]+'obj' for brick in bricks]
 
-brick_meshs_path1 = glob.glob('/home/yyk/lego/dataset/bricks/complete_bricks_obj/meshes/*.obj')
+brick_meshs_path1 = glob.glob('dataset/bricks/complete_bricks_obj/meshes/*.obj')
 brick_meshs1=[mesh.split('/')[-1] for mesh in brick_meshs_path1]
-brick_meshs_path2 = glob.glob('/home/yyk/lego/dataset/bricks/export_obj/*.obj')
+brick_meshs_path2 = glob.glob('dataset/bricks/export_obj/*.obj')
 brick_meshs2=[mesh.split('/')[-1] for mesh in brick_meshs_path2]
 brick_meshs=brick_meshs1+brick_meshs2
 
@@ -189,7 +189,7 @@ for diff in diffs:
         brick=brick_name+bricks_name[brick_name]
         brick_list.append(brick)
 
-with open('/home/yyk/lego/dataset/bricks/brick_delete_list.txt','w',encoding='utf-8') as file:
+with open('dataset/bricks/brick_delete_list.txt','w',encoding='utf-8') as file:
     for brick in brick_list:
         file.write(brick)
         file.write('\n')

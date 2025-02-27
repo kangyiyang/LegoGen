@@ -1,9 +1,9 @@
 cd ..
 
 OMP_NUM_THREADS=1 \
-CUDA_VISIBLE_DEVICES=4,5 /home/yyk/miniconda3/envs/lego/bin/torchrun --nproc_per_node 2 --master_port=25633 main.py \
-    --dataset_root '/home/yyk/simple_lego/dataset/preprocessed_dataset' \
-    --ckpt_dir '/NASdata/yyk/llama_model/llama-2-13b' \
+torchrun --nproc_per_node 2 --master_port=25633 main.py \
+    --dataset_root 'simple_lego/dataset/preprocessed_dataset' \
+    --ckpt_dir 'llama_model/llama-2-13b' \
     --max_seq_len 512 \
     --lr 2e-4 \
     --miu 1 \

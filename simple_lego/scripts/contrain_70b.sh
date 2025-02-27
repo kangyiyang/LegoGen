@@ -1,9 +1,9 @@
 cd ..
 
 OMP_NUM_THREADS=1 \
-/home/yyk/miniconda3/envs/lego/bin/torchrun --nproc_per_node 8 --master_port=25631 main.py \
-    --dataset_root '/home/yyk/simple_lego/dataset/preprocessed_dataset' \
-    --ckpt_dir '/NASdata/yyk/logs_2024-05-21-19-20/val' \
+torchrun --nproc_per_node 8 --master_port=25631 main.py \
+    --dataset_root 'simple_lego/dataset/preprocessed_dataset' \
+    --ckpt_dir 'val' \
     --text_model_size 'ViT-B/32' \
     --rank 4 \
     --c_n_heads 40 \
