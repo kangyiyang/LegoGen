@@ -1,3 +1,3 @@
 ## LegoGen
 
-An attempt to generate Lego models using LLaMA
+An attempt to generate Lego models using LLaMA.
